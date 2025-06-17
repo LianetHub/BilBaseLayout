@@ -1,0 +1,85 @@
+// Использование модулей SASS
+@use "sass:math";
+// Использование модулей SASS
+// ======================================МИКСИНЫ==============================================
+@import "mixins";
+// ======================================МИКСИНЫ==============================================
+
+// ======================================ШРИФТЫ===============================================
+@import "fonts";
+@import "icons";
+// ======================================ШРИФТЫ===============================================
+
+// Шрифт по умолчанию
+$fontfamily: "AeonikPro";
+$font-steppe: "Steppe";
+
+// Шрифт по умолчанию
+
+$md0: 1599.98px;
+$md1: 1399.98px;
+$md2: 1279.98px;
+$md3: 1023.98px;
+$md4: 767.98px;
+$md5: 575.98px;
+$md6: 389.98px;
+
+// ПЕРЕМЕННЫЕ
+
+$minWidth: 320; // Минимальная ширина страницы
+$maxWidth: 1920; // Ширина макета
+$maxWidthContainer: rem(1352); // Максимальная ширина ограничивающего контейнера
+$containerPadding: 30;
+
+// ЦВЕТА
+
+$brand-sea-mist: #89c1bd;
+$text-overlay-white: #fff;
+$brand-deep-tide: #115268;
+$text-primary-black: #04181e;
+$text-secondary-grey: #516a72;
+$text-tertiary-grey: #94a3a8;
+$elements-primary: #115268;
+$elements-secondary: #ebebeb;
+$elements-primary-hover: #157291;
+$elements-secondary-hover: #cbdfe7;
+$elements-tertiary-overlay: #fff;
+$divider: #e4e4e4;
+$background-grey: #f8f8f8;
+$background-green: #dff4f2;
+$background-white: #fff;
+$elements-tertiary-overlay-transparent: rgba(255, 255, 255, 0.16);
+$background-dark: #062935;
+
+$white: $background-grey;
+$red: #da2800;
+
+// Z-Index
+
+$ui-index-1: 1; // Для наполняющих элементов в общем потоке
+$ui-index-2: 2; // Для наполняющих элементов в общем потоке
+$ui-index-3: 3; // Для масок
+$ui-index-4: 4; // Для сайдбаров
+$ui-index-5: 5; // Для модалок
+$ui-index-6: 6; // Для элементов, перекрывающих все
+
+// ОБЩИЕ ПАРАМЕТРЫ
+
+// @import "grid";
+@import "ui";
+@import "forms";
+@import "common";
+@import "header";
+@import "footer";
+
+//=======================================
+
+// СТИЛИ СТРАНИЦ
+
+@import "pages/home";
+@import "pages/service";
+@import "pages/about";
+@import "pages/contacts";
+@import "pages/blog";
+@import "pages/case";
+@import "pages/article";

@@ -1,0 +1,584 @@
+.header {
+	background: #fff;
+	padding: 1rem 0;
+	position: relative;
+	&.open-menu {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: $background-grey;
+			z-index: 11;
+			@media (min-width: $md4) {
+				display: none;
+			}
+		}
+	}
+	// .header__container
+	&__container {
+		max-width: 100%;
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+	}
+	// .header__logo
+	&__logo {
+		width: 7.3125rem;
+		flex-shrink: 0;
+		position: relative;
+		z-index: 11;
+	}
+	// .header__location
+	&__location {
+		display: none;
+		@media (min-width: $md3) {
+			display: flex;
+			align-items: center;
+			white-space: nowrap;
+			gap: rem(8);
+			color: $text-secondary-grey;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.25;
+			&::before {
+				width: 1.25rem;
+				height: 1.25rem;
+				flex-shrink: 0;
+				font-size: 1.25rem;
+				color: $brand-sea-mist;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+		@media (min-width: $md1) {
+			margin-left: 2.5rem;
+		}
+	}
+	// .header__menu
+	&__menu {
+	}
+	// .header__phone
+	&__phone {
+		position: relative;
+		z-index: 11;
+		flex-shrink: 0;
+		margin-left: auto;
+		&.btn.btn-sm {
+			padding: 0.75rem;
+			@media (min-width: $md3) {
+				padding: 0.75rem 1.5rem;
+			}
+		}
+		&::before {
+			@media (min-width: $md3) {
+				display: none;
+			}
+		}
+		& span {
+			display: none;
+			@media (min-width: $md3) {
+				display: inline;
+			}
+		}
+	}
+	// .header__btn
+	&__btn {
+		display: none;
+		@media (min-width: $md5) {
+			flex-shrink: 0;
+			position: relative;
+			z-index: 11;
+			display: flex;
+		}
+	}
+}
+
+.menu {
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	overflow-x: hidden;
+	overflow-y: auto;
+	transition: transform 0.3s ease 0s;
+	transform: translateX(100%);
+	&.first-menu-open {
+		@media (max-width: $md4) {
+			.menu__link,
+			.menu__arrow {
+				display: none;
+			}
+		}
+	}
+	&.second-menu-open {
+		@media (max-width: $md4) {
+			.submenu__link,
+			.submenu__arrow {
+				display: none;
+			}
+		}
+	}
+	.header.open-menu & {
+		transform: translateX(0);
+		@media (min-width: $md3) {
+			transform: none;
+		}
+	}
+	padding: 6.5rem 1rem 1rem;
+	@media (min-width: $md4) {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: auto;
+		height: auto;
+		padding: 0;
+		transition: none;
+		overflow-x: visible;
+		overflow-y: visible;
+		flex-direction: row;
+		align-items: center;
+		display: flex;
+		transform: none;
+		flex: 0 1 rem(402);
+		margin: 0 auto;
+	}
+	@media (min-width: $md1) {
+		margin-left: 2rem;
+	}
+	// .menu__body
+	&__body {
+		flex: 1 1 auto;
+		@media (max-width: $md4) {
+			max-width: rem(720);
+			width: 100%;
+			margin: 0 auto;
+		}
+	}
+	// .menu__header
+	&__header {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.5rem;
+
+		@media (min-width: $md4) {
+			display: none;
+		}
+	}
+	// .menu__caption
+	&__caption {
+	}
+	// .menu__back
+	&__back {
+		font-size: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		line-height: 125%;
+		&::before {
+			width: 1.25rem;
+			height: 1.25rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $elements-primary;
+		}
+	}
+	// .menu__list
+	&__list {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 0.5rem;
+		justify-content: flex-start;
+		margin-top: 1.5rem;
+		@media (min-width: $md4) {
+			margin-top: 0;
+			gap: 0.5rem;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+	// .menu__item
+	&__item {
+		display: flex;
+		align-items: center;
+
+		&.menu-parent {
+			position: relative;
+			display: flex;
+			align-items: center;
+
+			.menu__link {
+				padding-right: 1.25rem;
+				margin-right: -1.25rem;
+				@media (min-width: $md1) {
+					padding-right: 2.75rem;
+					margin-right: -1.5rem;
+				}
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					color: $brand-deep-tide;
+					& .submenu {
+						@media (min-width: $md3) {
+							opacity: 1;
+							visibility: visible;
+							transform: translate3d(0, 0, 0);
+						}
+					}
+
+					@media (min-width: $md4) {
+						& .menu__arrow {
+							&::before {
+								transform: rotate(180deg);
+							}
+						}
+					}
+				}
+			}
+			&.active {
+				.menu__link {
+					color: $brand-deep-tide;
+					& + .menu__arrow {
+						color: $brand-deep-tide;
+					}
+				}
+			}
+		}
+	}
+	// .menu__link
+	&__link {
+		display: inline-block;
+		transition: color 0.3s ease 0s;
+		line-height: 125%;
+		padding: 0.75rem 0;
+		@media (min-width: $md4) {
+			flex: 0 1 auto;
+			padding: 0.75rem 0.5rem;
+		}
+		@media (min-width: $md1) {
+			padding: 0.75rem 1.5rem;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $brand-deep-tide;
+			}
+		}
+	}
+	// .menu__arrow
+	&__arrow {
+		order: 1;
+		display: flex;
+		align-items: center;
+		color: currentColor;
+		width: 1.25rem;
+		height: 1.25rem;
+		font-size: 1.25rem;
+		flex-shrink: 0;
+		@media (min-width: $md1) {
+			transform: translateX(-100%);
+		}
+		&::before {
+			order: 1;
+			transition: transform 0.3s ease 0s;
+			transform: rotate(-90deg);
+			@media (min-width: $md4) {
+				transform: none;
+			}
+		}
+		&.active {
+			&::before {
+				transform: rotate(180deg);
+			}
+		}
+	}
+	// .menu__location
+	&__location {
+		display: flex;
+		align-items: center;
+		white-space: nowrap;
+		gap: rem(8);
+		color: $text-secondary-grey;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.25;
+		margin-bottom: 0.75rem;
+		&::before {
+			width: 1.25rem;
+			height: 1.25rem;
+			flex-shrink: 0;
+			font-size: 1.25rem;
+			color: $brand-sea-mist;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		@media (min-width: $md4) {
+			display: none;
+		}
+	}
+	// .menu__bottom
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		@media (min-width: $md4) {
+			display: none;
+		}
+	}
+}
+
+.submenu {
+	@media (max-width: $md4) {
+		display: none;
+		&.open {
+			display: block;
+		}
+	}
+
+	@media (min-width: $md4) {
+		padding-top: 1rem;
+		top: 100%;
+		left: rem(-60);
+		position: absolute;
+		color: $text-primary-black;
+		z-index: 11;
+		width: 100%;
+		transform-origin: center top;
+		transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+		min-width: rem(320);
+		will-change: transform;
+
+		opacity: 0;
+		visibility: hidden;
+		transform: translate3d(0, rem(-7), 0);
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: calc(100% - 1rem);
+			background: #fff;
+		}
+		@media (min-width: $md2) {
+			left: rem(-8);
+		}
+		@media (hover: none) {
+			&.open {
+				opacity: 1;
+				visibility: visible;
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+
+	// .sub-menu__list
+	&__list {
+		color: $text-primary-black;
+		@media (min-width: $md4) {
+			position: relative;
+			padding: 1rem;
+		}
+	}
+	// .submenu__item
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 0.5rem;
+		}
+		&.submenu-parent {
+			display: flex;
+			align-items: center;
+			.submenu__link {
+				padding-right: 0;
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					margin-right: -1rem;
+					.submenu__link,
+					.submenu__arrow {
+						color: $brand-deep-tide;
+					}
+					& .subsubmenu {
+						@media (min-width: $md3) {
+							opacity: 1;
+							visibility: visible;
+							transform: translate3d(0, 0, 0);
+						}
+					}
+				}
+			}
+			&.active {
+				.submenu__link,
+				.submenu__arrow {
+					color: $brand-deep-tide;
+				}
+			}
+		}
+	}
+	// .submenu__arrow
+	&__arrow {
+		order: 1;
+		display: flex;
+		align-items: center;
+		color: currentColor;
+		width: 1.25rem;
+		height: 1.25rem;
+		font-size: 1.25rem;
+		flex-shrink: 0;
+		&::before {
+			order: 1;
+			transform: rotate(-90deg);
+			transition: transform 0.3s ease 0s;
+		}
+	}
+	// .submenu__link
+	&__link {
+		display: inline-block;
+		line-height: 125%;
+		transition: color 0.3s ease;
+		padding: 0.75rem 0rem;
+		@media (min-width: $md4) {
+			padding: 0.75rem 1rem;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $elements-primary;
+			}
+		}
+	}
+}
+
+.subsubmenu {
+	@media (max-width: $md4) {
+		display: none;
+		&.open {
+			display: block;
+		}
+	}
+
+	@media (min-width: $md4) {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		background: #fff;
+		padding: 1rem 0;
+		min-width: rem(350);
+
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+		transform-origin: left center;
+		transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+		opacity: 0;
+		visibility: hidden;
+		transform: translate3d(rem(-7), 0, 0);
+	}
+	@media (hover: none) {
+		&.open {
+			opacity: 1;
+			visibility: visible;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+	// .subsubmenu__list
+	&__list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		@media (min-width: $md4) {
+			flex: 1 1 auto;
+			border-left: rem(1) solid $divider;
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
+	// .subsubmenu__item
+	&__item {
+	}
+	// .subsubmenu__link
+	&__link {
+		padding: 0.75rem 0;
+		display: inline-block;
+		line-height: 125%;
+		transition: color 0.3s ease;
+		@media (min-width: $md4) {
+			padding: 0.75rem 1rem;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $elements-primary;
+			}
+		}
+	}
+}
+
+.icon-menu {
+	flex-shrink: 0;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-end;
+	justify-content: center;
+	padding: 0;
+	order: 1;
+	z-index: 11;
+	height: 2.75rem;
+	min-width: 2.75rem;
+	color: $brand-deep-tide;
+	padding: rem(12);
+	@media (min-width: $md4) {
+		display: none;
+	}
+	& span {
+		display: block;
+		padding: rem(3) rem(0);
+		width: 100%;
+		transition: transform 0.4s ease 0.4s, opacity 0.4s ease 0.4s;
+		will-change: transform;
+		&::before {
+			content: "";
+			display: block;
+			height: rem(2);
+			width: 100%;
+			margin-left: auto;
+			background: currentColor;
+			transition: transform 0.3s ease 0s;
+			will-change: transform;
+		}
+	}
+	.header.open-menu & {
+		& span {
+			transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+			&::before {
+				transition: transform 0.45s ease 0.35s, width 0.3s ease 0s;
+				width: 90%;
+			}
+			&:first-child {
+				transform: translateY(rem(4));
+
+				&::before {
+					transform: rotate(-135deg);
+				}
+			}
+
+			&:nth-child(2) {
+				transform: translateY(rem(-4));
+
+				&::before {
+					transform: rotate(-225deg);
+				}
+			}
+		}
+	}
+}

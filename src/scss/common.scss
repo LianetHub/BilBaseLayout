@@ -1,0 +1,206 @@
+body {
+	font-family: $fontfamily, sans-serif;
+	font-size: 1rem;
+	min-width: rem($minWidth);
+	min-height: 100%;
+	line-height: normal;
+	color: $text-primary-black;
+	background-color: $background-grey;
+	margin-right: 0 !important;
+	&:has(.header.open-menu) {
+		@media (max-width: $md3) {
+			overflow: hidden;
+		}
+	}
+}
+
+// ================== ОБОЛОЧКА ==============================
+
+.wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow-x: clip;
+}
+
+.page {
+	flex: 1 1 auto;
+	// overflow: hidden;
+}
+
+// ================== ОБОЛОЧКА ===============================
+
+// ================== LAYOUT =================================
+
+[class*="__container"] {
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 rem(16);
+	@media (min-width: $md5) {
+		box-sizing: content-box;
+		max-width: rem(540);
+	}
+	@media (min-width: $md4) {
+		max-width: rem(720);
+	}
+	@media (min-width: $md3) {
+		max-width: rem(960);
+	}
+	@media (min-width: $md2) {
+		max-width: rem(1140);
+	}
+	@media (min-width: $md1) {
+		max-width: $maxWidthContainer;
+	}
+}
+
+//=============== LAYOUT ===============================
+
+.swiper-button-next,
+.swiper-button-prev {
+	&::after {
+		display: none;
+	}
+	position: relative;
+	left: auto;
+	right: auto;
+	bottom: auto;
+	top: auto;
+	margin: 0;
+	transform: none;
+	transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+	z-index: 2;
+	width: 3.25rem;
+	height: 3.25rem;
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: $elements-tertiary-overlay-transparent;
+	color: $white;
+	&.swiper-button-dark {
+		background: $elements-secondary;
+		color: $elements-primary;
+		@media (any-hover: hover) {
+			&:hover {
+				background: $elements-secondary-hover;
+			}
+		}
+	}
+	&:disabled,
+	&.swiper-button-disabled,
+	&[aria-disabled="true"] {
+		pointer-events: none;
+		opacity: 0.4;
+	}
+	&.swiper-button-lock {
+		display: none;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background: rgba(255, 255, 255, 0.36);
+		}
+	}
+}
+
+.swiper-button-prev {
+	@extend %ic, .icon-chevron-left;
+}
+.swiper-button-next {
+	@extend %ic, .icon-chevron-right;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		font-size: 0;
+		opacity: 0.32;
+		background: $elements-tertiary-overlay;
+		transform: scale3d(0, 1, 1);
+		transform-origin: left;
+		will-change: transform;
+		z-index: -1;
+		display: block;
+	}
+	&.swiper-button-dark {
+		&::after {
+			opacity: 0.16;
+			background: $elements-primary;
+		}
+	}
+	&.counting::after {
+		animation: countingBar var(--counting-speed, 8.8s) linear forwards;
+	}
+
+	@keyframes countingBar {
+		0% {
+			transform: scale3d(0, 1, 1);
+		}
+		100% {
+			transform: scale3d(1, 1, 1);
+		}
+	}
+}
+
+.banner {
+	padding: 2.5rem 0 0;
+	background: #fff;
+	@media (min-width: $md3) {
+		padding: 4.5rem 0 0;
+	}
+	// .banner__container
+	&__container {
+	}
+	// .banner__content
+	&__content {
+		background-color: #062935;
+		color: $text-overlay-white;
+		text-align: center;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1352' height='248' viewBox='0 0 1352 248' fill='none'%3E%3Cpath d='M1352 0L-0.999979 248M1352 0H675.5M1352 0V124M-0.999979 248H675.5M-0.999979 248V124M675.5 248H1352V124M675.5 248V0M675.5 248L1352 124M675.5 0H-0.999979V124M675.5 0L-0.999979 124M-0.999979 124H1352' stroke='white' stroke-opacity='0.16'/%3E%3C/svg%3E");
+		background-size: auto 100%;
+		background-position: center;
+		padding: 1.5rem;
+		@media (min-width: $md5) {
+			padding: 2.5rem;
+		}
+		@media (min-width: $md3) {
+			padding: 4rem;
+		}
+	}
+	// .banner__title
+	&__title {
+	}
+	// .banner__btn
+	&__btn {
+		margin-top: 1.5rem;
+	}
+}
+
+// .swiper-pagination {
+// 	margin-top: 2rem;
+// 	position: static;
+// 	bottom: auto;
+
+// 	display: flex;
+// 	justify-content: center;
+// 	&.swiper-pagination-lock {
+// 		margin-top: 0;
+// 	}
+// 	.swiper-pagination-bullet {
+// 		position: relative;
+// 		width: 0.75rem;
+// 		height: 0.75rem;
+// 		--swiper-pagination-bullet-horizontal-gap: #{rem(6)};
+// 		background: #d9d9d9;
+// 		opacity: 1;
+// 		transition: all 0.3s ease 0s;
+// 		&.swiper-pagination-bullet-active {
+// 			background: $brand-deep-tide;
+// 		}
+// 	}
+// }
