@@ -1,6 +1,5 @@
 /* Display (48) */
 @mixin title-xl {
-	font-family: $font-steppe;
 	line-height: 116.667%;
 	letter-spacing: -0.18rem;
 	font-size: 3rem;
@@ -8,7 +7,6 @@
 
 /* Title (44) */
 @mixin title {
-	font-family: $font-steppe;
 	font-size: 2.75rem;
 	line-height: 118.182%;
 	letter-spacing: -0.165rem;
@@ -16,7 +14,6 @@
 
 /* Title (36) */
 @mixin title-lg {
-	font-family: $font-steppe;
 	font-size: 2.25rem;
 	line-height: 122.222%;
 	letter-spacing: -0.135rem;
@@ -24,7 +21,6 @@
 
 /* Title (32) */
 @mixin title-md {
-	font-family: $font-steppe;
 	font-size: 2rem;
 	line-height: 125%;
 	letter-spacing: -0.12rem;
@@ -32,7 +28,6 @@
 
 /* Subtitle (26) */
 @mixin title-sm {
-	font-family: $font-steppe;
 	font-size: 1.625rem;
 	line-height: 123.077%;
 	letter-spacing: -0.0975rem;
@@ -103,7 +98,7 @@
 }
 
 .color-primary {
-	color: $text-primary-black;
+	color: $text;
 }
 
 .text-center {
@@ -112,14 +107,11 @@
 
 //============ МОДУЛИ ====================
 @import "modules/popup";
-@import "modules/range";
-@import "modules/breadcrumbs";
-@import "modules/star-rating";
 
 //============ МОДУЛИ ====================
 
 .color-accent {
-	color: $brand-deep-tide;
+	color: $text;
 }
 
 .fw-medium {
@@ -383,7 +375,7 @@
 
 // Стилизация скролла
 
-$scrollbarColor: $brand-deep-tide;
+$scrollbarColor: $text;
 
 ::-webkit-scrollbar {
 	width: rem(8);
@@ -396,7 +388,7 @@ $scrollbarColor: $brand-deep-tide;
 	border-radius: rem(8);
 	@media (any-hover: hover) {
 		&:hover {
-			background: darken($color: $brand-deep-tide, $amount: 10);
+			background: darken($color: $text, $amount: 10);
 		}
 	}
 }

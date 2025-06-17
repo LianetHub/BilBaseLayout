@@ -31,9 +31,9 @@ $progress: #115268;
 
 .range {
 	&__output {
-		background: $background-grey;
+		 
 		padding: 1rem;
-		color: $text-primary-black;
+		color: $text
 		font-size: 1rem;
 		line-height: 125%;
 		margin-bottom: -0.75rem;
@@ -43,7 +43,7 @@ $progress: #115268;
 
 		&::after {
 			content: attr(data-unit);
-			color: $text-tertiary-grey;
+			  
 			text-align: right;
 
 			font-size: 1rem;
@@ -153,7 +153,7 @@ $progress: #115268;
 		margin-top: -0.45rem;
 		display: flex;
 		justify-content: space-between;
-		color: $text-secondary-grey;
+		color: $text;
 		font-size: 0.875rem;
 		line-height: 157.143%;
 		padding: 0 0.31rem;

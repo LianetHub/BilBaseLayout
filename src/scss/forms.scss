@@ -1,6 +1,6 @@
 .form {
 	&__label {
-		color: $text-secondary-grey;
+		color: $text;
 		font-size: 1rem;
 		line-height: 125%;
 	}
@@ -27,45 +27,34 @@
 		padding: 1rem;
 		font-size: 1rem;
 		line-height: 125%;
-		background: $background-grey;
 
-		color: $text-primary-black;
+		color: $text;
 		&.form__control--dark {
-			background: $elements-tertiary-overlay-transparent;
-			color: $text-overlay-white;
 			&::placeholder {
-				color: $text-tertiary-grey;
 			}
 			&:hover {
 				background: rgba(255, 255, 255, 0.24);
 			}
 			&:focus {
-				color: $text-overlay-white;
 				background: rgba(255, 255, 255, 0.24);
-				outline: rem(1) solid $text-overlay-white;
+				outline: rem(1) solid $text;
 			}
 		}
 		&::placeholder {
 			opacity: 1;
-			color: $text-secondary-grey;
+			color: $text;
 		}
 		&:hover {
-			background: $elements-secondary;
 		}
 		&:focus {
-			color: $text-primary-black;
-			background: $elements-secondary;
-			outline: rem(1) solid $brand-sea-mist;
+			color: $text;
 		}
 
 		&:disabled {
 			opacity: 0.24;
 		}
 		&._error {
-			outline: rem(1) solid $red;
-			background: $elements-secondary;
 			&::placeholder {
-				color: $red;
 			}
 		}
 		&:is(textarea) {
@@ -117,11 +106,11 @@
 	// 		display: flex;
 	// 		justify-content: center;
 	// 		align-items: center;
-	// 		border: rem(1) solid $text-primary-black;
+	// 		border: rem(1) solid $text
 	// 		width: rem(24);
 	// 		height: rem(24);
 	// 		border-radius: rem(3);
-	// 		color: $brand-deep-tide;
+	// 		color: $text;
 	// 		display: flex;
 	// 		justify-content: center;
 	// 		align-items: center;
@@ -138,11 +127,10 @@
 	// }
 	// .form__privacy
 	&__privacy {
-		color: $text-tertiary-grey;
 		font-size: 0.875rem;
 		line-height: 157.143%;
 		& a {
-			color: $text-primary-black;
+			color: $text;
 			@media (any-hover: hover) {
 				&:hover {
 					text-decoration: underline;
@@ -157,10 +145,8 @@
 	&__option-input {
 		&:checked {
 			& + .form__option-btn {
-				background: $background-grey;
-				border-color: $background-grey;
 				&::before {
-					background: $brand-deep-tide;
+					background: $text;
 					box-shadow: inset 0 0 0 rem(6) #fff;
 				}
 			}
@@ -172,7 +158,6 @@
 		align-items: center;
 		gap: 0.5rem;
 		transition: background-color 0.3s ease, border-color 0.3s ease;
-		border: rem(1) solid $divider;
 
 		cursor: pointer;
 		&::before {
@@ -181,7 +166,6 @@
 			height: 2rem;
 			flex-shrink: 0;
 			border-radius: 50%;
-			border: rem(1) solid $divider;
 		}
 		padding: 1rem;
 		@media (min-width: $md4) {
@@ -201,57 +185,38 @@
 	text-align: center;
 	user-select: none;
 	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-	font-size: 1rem;
-	line-height: 125%;
-	padding: 1rem 1.5rem;
-	&::before {
-		width: 1.25rem;
-		height: 1.25rem;
-		font-size: 1.25rem;
-		order: 1;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-shrink: 0;
-	}
+
+	font-size: rem(20);
+	gap: 0.5rem;
+	font-weight: 300;
+	border-radius: rem(4);
+	padding: 1rem 1.75rem;
 
 	&:focus-visible {
-		box-shadow: 0 0 rem(1) rem(1) $text-primary-black;
+		box-shadow: 0 0 rem(1) rem(1) $text;
 	}
 
 	&.btn-primary {
-		background: $elements-primary;
-		color: $text-overlay-white;
+		color: #fff;
+		background-color: #fe4001;
 
-		&:hover,
+		&:hover {
+			background-color: darken($color: #fe4001, $amount: 5);
+		}
 		&:active {
-			background: $elements-primary-hover;
+			background-color: darken($color: #fe4001, $amount: 10);
 		}
 	}
 
-	&.btn-secondary {
-		background: $elements-secondary;
-		color: $text-primary-black;
-		&::before {
-			color: $elements-primary;
-		}
+	&.btn-white {
+		color: #000;
+		background-color: #fff;
 
-		&:hover,
+		&:hover {
+			background-color: darken($color: #fff, $amount: 5);
+		}
 		&:active {
-			background: $elements-secondary-hover;
-		}
-	}
-
-	&.btn-tertiary {
-		background: $text-overlay-white;
-		color: $text-primary-black;
-		&::before {
-			color: $elements-primary;
-		}
-
-		&:hover,
-		&:active {
-			color: $brand-deep-tide;
+			background-color: darken($color: #fff, $amount: 10);
 		}
 	}
 
@@ -266,78 +231,26 @@
 
 	&:disabled,
 	&[aria-disabled="true"] {
-		background: $elements-secondary;
-		color: $text-tertiary-grey;
 		pointer-events: none;
 		&::before {
-			color: $elements-primary;
 		}
 	}
 
 	&.filter-btn {
 		width: fit-content;
-		background: $white;
-		border: rem(1) solid $divider;
+
 		&:not(:last-child) {
 			border-right: 0;
-			border-right-color: $white;
 		}
 		&:not(:first-child) {
 			border-left: 0;
-			border-left-color: $white;
 		}
 		&:hover,
 		&:active,
 		&.active {
-			background: $elements-secondary;
-			color: $elements-primary-hover;
 		}
 	}
 }
-
-.filters {
-	// border: rem(1) solid $divider;
-	overflow: visible;
-	@media (min-width: $md4) {
-		max-width: 100%;
-	}
-}
-
-// .switcher {
-// 	// .switcher__input
-// 	&__input {
-// 		&:checked {
-// 			& + .switcher__btn {
-// 				&::before {
-// 					left: rem(2);
-// 				}
-// 				background: #81a6ca;
-// 			}
-// 		}
-// 	}
-// 	// .switcher__btn
-// 	&__btn {
-// 		position: relative;
-// 		width: rem(35);
-// 		height: rem(20);
-// 		border-radius: 6.25rem;
-// 		background: #81a6ca;
-// 		display: block;
-// 		cursor: pointer;
-// 		transition: background-color 0.3s ease 0s;
-// 		&::before {
-// 			content: "";
-// 			position: absolute;
-// 			top: rem(2);
-// 			left: rem(17);
-// 			width: rem(16);
-// 			transition: left 0.3s ease 0s;
-// 			border-radius: 50%;
-// 			background: #fff;
-// 			height: calc(100% - rem(4));
-// 		}
-// 	}
-// }
 
 .iti__selected-flag {
 	background-color: rgba(0, 0, 0, 0.05);
@@ -348,9 +261,9 @@
 	& select {
 		appearance: none;
 		background: transparent;
-		border: rem(1) solid $brand-deep-tide;
+		border: rem(1) solid $text;
 		border-radius: rem(6);
-		color: $text-primary-black;
+		color: $text;
 		font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
 			"Segoe UI Symbol", "Noto Color Emoji";
 		display: block;

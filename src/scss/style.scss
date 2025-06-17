@@ -11,8 +11,7 @@
 // ======================================ШРИФТЫ===============================================
 
 // Шрифт по умолчанию
-$fontfamily: "AeonikPro";
-$font-steppe: "Steppe";
+$fontfamily: "Geologica";
 
 // Шрифт по умолчанию
 
@@ -28,31 +27,12 @@ $md6: 389.98px;
 
 $minWidth: 320; // Минимальная ширина страницы
 $maxWidth: 1920; // Ширина макета
-$maxWidthContainer: rem(1352); // Максимальная ширина ограничивающего контейнера
+$maxWidthContainer: rem(1240); // Максимальная ширина ограничивающего контейнера
 $containerPadding: 30;
 
 // ЦВЕТА
 
-$brand-sea-mist: #89c1bd;
-$text-overlay-white: #fff;
-$brand-deep-tide: #115268;
-$text-primary-black: #04181e;
-$text-secondary-grey: #516a72;
-$text-tertiary-grey: #94a3a8;
-$elements-primary: #115268;
-$elements-secondary: #ebebeb;
-$elements-primary-hover: #157291;
-$elements-secondary-hover: #cbdfe7;
-$elements-tertiary-overlay: #fff;
-$divider: #e4e4e4;
-$background-grey: #f8f8f8;
-$background-green: #dff4f2;
-$background-white: #fff;
-$elements-tertiary-overlay-transparent: rgba(255, 255, 255, 0.16);
-$background-dark: #062935;
-
-$white: $background-grey;
-$red: #da2800;
+$text: #000;
 
 // Z-Index
 
@@ -74,12 +54,98 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
 //=======================================
 
-// СТИЛИ СТРАНИЦ
-
-@import "pages/home";
-@import "pages/service";
-@import "pages/about";
-@import "pages/contacts";
-@import "pages/blog";
-@import "pages/case";
-@import "pages/article";
+.promo {
+	padding-bottom: 2rem;
+	// .promo__container
+	&__container {
+	}
+	// .promo__header
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	// .promo__offer
+	&__offer {
+		flex: 1 1 auto;
+		padding-top: 5.4rem;
+	}
+	// .promo__title
+	&__title {
+		font-size: rem(70);
+		font-weight: 100;
+		line-height: math.div(72, 70);
+		margin-right: -8rem;
+	}
+	// .promo__desc
+	&__desc {
+		margin-top: 3.7rem;
+		font-size: 1.5rem;
+		font-weight: 100;
+	}
+	// .promo__btn
+	&__btn {
+		margin-top: 3rem;
+		min-width: rem(347);
+	}
+	// .promo__image
+	&__image {
+		position: relative;
+		flex: 0 0 rem(930);
+		margin-right: -11.3rem;
+		& img {
+			position: relative;
+			z-index: 2;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: -15px;
+			left: -89px;
+			width: 1210px;
+			height: 919px;
+			background: url("@img/decor.svg") 0 0 / contain no-repeat;
+			z-index: 1;
+			pointer-events: none;
+		}
+	}
+	// .promo__footer
+	&__footer {
+		margin-top: -14rem;
+		background-color: #f0f7fe;
+		border-radius: 1.25rem;
+		padding: 4rem 3.2rem;
+	}
+	// .promo__caption
+	&__caption {
+		font-size: rem(36);
+		font-weight: 100;
+		line-height: 1.2;
+		max-width: 41rem;
+	}
+	// .promo__list
+	&__list {
+		margin-top: 2.7rem;
+		font-size: rem(24);
+		font-weight: 100;
+		columns: 2;
+		& li {
+			break-inside: avoid;
+			position: relative;
+			padding-left: 1.3rem;
+			&::before {
+				content: "";
+				position: absolute;
+				top: rem(12);
+				left: 0;
+				border-radius: 50%;
+				width: rem(6);
+				height: rem(6);
+				background: #ff3d00;
+			}
+			&:not(:last-child) {
+				margin-bottom: 1.6rem;
+			}
+		}
+	}
+}

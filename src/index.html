@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="ru">
-    @@include('html/_head.html', {
-    'title': 'Главная страница'
-    })
+    @@include('html/_head.html', {})
     <body>
         <div class="wrapper">
             @@include('html/_header.html', {})
             <main class="page">
-
+                <section class="promo">
+                    <div class="promo__container">
+                        <div class="promo__header">
+                            <div class="promo__offer">
+                                <h1 class="promo__title">Платформа для системной работы с&nbsp;объектами</h1>
+                                <p class="promo__desc">Стань интегратором цифровых строительных решений. <br> Управляй сделками.</p>
+                                <a href="" class="promo__btn btn btn-primary">Бесплатная консультация</a>
+                            </div>
+                            <div class="promo__image">
+                                <img src="@img/notebook.png" alt="Ноутбук">
+                            </div>
+                        </div>
+                        <div class="promo__footer">
+                            <h2 class="promo__caption">Платформа для производителей строительных материалов, системных решений и их дистрибьюторов, стандартизирующая работу с&nbsp;технико-коммерческими предложениями</h2>
+                            <ul class="promo__list">
+                                <li>Повышает конверсию сделок за счет логичного представления информации клиенту</li>
+                                <li>Минимизирует ручной труд</li>
+                                <li>Анализирует стадии работы с объектом </li>
+                                <li>Интегрирует данные производителей, строительные нормы и климатические условия для формирования точных предложений под объект</li>
+                                <li>Упрощает согласование и устраняет <br> ошибки</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </main>
             @@include('html/_footer.html', {})
             @@include('html/_modal.html', {})

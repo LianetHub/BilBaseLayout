@@ -11,10 +11,8 @@
 		&:not(:checked) {
 			& ~ .star-rating__label {
 				&:hover {
-					color: $elements-primary-hover;
 					& ~ .star-rating__label {
 						&::before {
-							color: $elements-primary-hover;
 						}
 					}
 				}
@@ -22,9 +20,7 @@
 		}
 		&:checked {
 			& ~ .star-rating__label {
-				color: $elements-primary-hover;
 				& ~ .star-rating__label {
-					color: $elements-primary-hover;
 				}
 			}
 		}

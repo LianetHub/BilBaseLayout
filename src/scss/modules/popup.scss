@@ -24,7 +24,7 @@
 .popup {
 	display: none;
 	background: #fff;
-	color: $text-primary-black;
+	color: $text;
 	overflow-y: auto;
 	margin-left: auto;
 	@media (min-width: $md4) {
@@ -47,7 +47,7 @@
 	// .popup__close
 	&__close {
 		font-size: 1.25rem;
-		background: $brand-deep-tide;
+		background: $text;
 		color: #fff;
 		position: absolute;
 		top: 1rem;
@@ -59,7 +59,7 @@
 		transition: background-color 0.3s ease;
 		@media (any-hover: hover) {
 			&:hover {
-				background: $text-primary-black;
+				background: $text;
 			}
 		}
 	}
@@ -68,7 +68,7 @@
 	}
 	// .popup__subtitle
 	&__subtitle {
-		color: $text-secondary-grey;
+		color: $text;
 		line-height: 150%;
 	}
 	// .popup__form

@@ -58,7 +58,7 @@
 		}
 		&:not(.active) {
 			&:hover {
-				border-color: $brand-deep-tide;
+				border-color: $text;
 			}
 		}
 		&.active {
@@ -152,7 +152,6 @@
 		&:not(.active) {
 			@media (any-hover: hover) {
 				&:hover {
-					color: $red;
 				}
 			}
 		}
@@ -162,7 +161,6 @@
 		}
 		&.active,
 		&[aria-checked="true"] {
-			color: $red;
 		}
 
 		&[aria-disabled="true"] {
