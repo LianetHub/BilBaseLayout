@@ -1,100 +1,13 @@
-/* Display (48) */
-@mixin title-xl {
-	line-height: 116.667%;
-	letter-spacing: -0.18rem;
-	font-size: 3rem;
-}
-
-/* Title (44) */
-@mixin title {
-	font-size: 2.75rem;
-	line-height: 118.182%;
-	letter-spacing: -0.165rem;
-}
-
-/* Title (36) */
-@mixin title-lg {
-	font-size: 2.25rem;
-	line-height: 122.222%;
-	letter-spacing: -0.135rem;
-}
-
-/* Title (32) */
-@mixin title-md {
-	font-size: 2rem;
-	line-height: 125%;
-	letter-spacing: -0.12rem;
-}
-
-/* Subtitle (26) */
-@mixin title-sm {
-	font-size: 1.625rem;
-	line-height: 123.077%;
-	letter-spacing: -0.0975rem;
-}
-
-/* Subtitle (20) */
-@mixin subtitle {
-	line-height: 140%;
-	font-size: 1.25rem;
-}
-
-.title-xl {
-	@include title-xl;
-}
-
 .title {
-	@include title;
-}
-
-.title-lg {
-	@include title-lg;
-}
-
-.title-md {
-	@include title-md;
+	font-size: rem(70);
+	font-weight: 100;
+	line-height: math.div(72, 70);
 }
 
 .title-sm {
-	@include title-sm;
-}
-
-.subtitle {
-	@include subtitle;
-}
-
-.title-xl-desktop {
-	@media (min-width: $md3) {
-		@include title-xl;
-	}
-}
-
-.title-desktop {
-	@media (min-width: $md3) {
-		@include title;
-	}
-}
-
-.title-md-desktop {
-	@media (min-width: $md3) {
-		@include title-md;
-	}
-}
-.title-lg-desktop {
-	@media (min-width: $md3) {
-		@include title-lg;
-	}
-}
-.title-sm-desktop {
-	@media (min-width: $md3) {
-		@include title-sm;
-	}
-}
-
-.subtitle-desktop {
-	@media (min-width: $md3) {
-		@include subtitle;
-	}
+	font-size: rem(36);
+	font-weight: 100;
+	line-height: 1.2;
 }
 
 .color-primary {
