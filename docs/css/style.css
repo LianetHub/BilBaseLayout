@@ -7,14 +7,6 @@
 }
 
 @font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Geologica";
   font-display: swap;
   src: url("../fonts/Geologica-Medium.woff2") format("woff2"), url("../fonts/Geologica-Medium.woff") format("woff");
@@ -25,16 +17,24 @@
 @font-face {
   font-family: "Geologica";
   font-display: swap;
-  src: url("../fonts/Geologica-Thin.woff2") format("woff2"), url("../fonts/Geologica-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Geologica-Regular.woff2") format("woff2"), url("../fonts/Geologica-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Geologica";
   font-display: swap;
-  src: url("../fonts/Geologica-Regular.woff2") format("woff2"), url("../fonts/Geologica-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Geologica-Thin.woff2") format("woff2"), url("../fonts/Geologica-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -671,7 +671,7 @@ body {
   gap: 1.75rem;
 }
 
-.footer__menu ul a {
+.footer__menu-link {
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
@@ -1018,14 +1018,13 @@ body {
 
 .benefits__visual {
   margin-top: 4rem;
-  width: 43.75rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  height: 43.75rem;
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  zoom: 0.4;
+  width: 17.5rem;
+  height: 17.5rem;
 }
 
 .benefits__diagram {
@@ -1079,10 +1078,10 @@ body {
 }
 
 .benefits__diagram-item {
-  font-size: 4.5rem;
   font-weight: 300;
   position: absolute;
   pointer-events: none;
+  font-size: 1.8rem;
 }
 
 .benefits__diagram-item:nth-child(1) {
@@ -1137,7 +1136,6 @@ body {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1151,6 +1149,7 @@ body {
   visibility: hidden;
   -webkit-transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
   transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+  width: 2rem;
 }
 
 .benefits__diagram-center {
@@ -1162,8 +1161,6 @@ body {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 50%;
-  width: 25rem;
-  height: 25rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1174,13 +1171,15 @@ body {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  padding: 2rem 4rem;
+  padding: 0.8rem 1.6rem;
+  width: 10rem;
+  height: 10rem;
 }
 
 .benefits__diagram-text {
   display: none;
   font-weight: 100;
-  font-size: 2.5rem;
+  font-size: 0.875rem;
 }
 
 .benefits__diagram-text.active {
@@ -1399,10 +1398,6 @@ body {
   font-weight: 100;
 }
 
-.tariffs__btn {
-  min-width: 21.6875rem;
-}
-
 .tariffs__btn::before {
   width: 1.1875rem;
   height: 1.1875rem;
@@ -1434,7 +1429,6 @@ body {
   border-radius: 0.25rem;
   background-color: #ffffff;
   border: 0.125rem solid #f0f7fe;
-  padding: 2.5rem 2rem 2.5rem 1.25rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1444,6 +1438,7 @@ body {
           flex-direction: column;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
+  padding: 2rem 1.25rem;
 }
 
 .tariffs__card-title {
@@ -1618,11 +1613,26 @@ body {
   }
 
   .benefits__visual {
-    zoom: 0.75;
+    width: 32.8125rem;
+    height: 32.8125rem;
+  }
+
+  .benefits__diagram-item {
+    font-size: 3.375rem;
+  }
+
+  .benefits__diagram-icon {
+    width: 3.75rem;
+  }
+
+  .benefits__diagram-center {
+    padding: 1.5rem 3rem;
+    width: 18.75rem;
+    height: 18.75rem;
   }
 
   .benefits__diagram-text {
-    font-size: 1.625rem;
+    font-size: 1.25rem;
   }
 
   .effect__item-num,
@@ -1737,7 +1747,26 @@ body {
   }
 
   .benefits__visual {
-    zoom: 1;
+    width: 43.75rem;
+    height: 43.75rem;
+  }
+
+  .benefits__diagram-item {
+    font-size: 4.5rem;
+  }
+
+  .benefits__diagram-icon {
+    width: 5rem;
+  }
+
+  .benefits__diagram-center {
+    padding: 2rem 4rem;
+    width: 25rem;
+    height: 25rem;
+  }
+
+  .benefits__diagram-text {
+    font-size: 1.625rem;
   }
 
   .effect__body {
@@ -1793,10 +1822,18 @@ body {
             align-items: center;
   }
 
+  .tariffs__btn {
+    min-width: 21.6875rem;
+  }
+
   .tariffs__cards {
     margin-top: 4rem;
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tariffs__card {
+    padding: 2.5rem 2rem 2.5rem 1.25rem;
   }
 
   .tariffs__card-price {
@@ -2015,6 +2052,14 @@ body {
   .solution__title {
     font-size: 1.75rem;
   }
+
+  .tariffs__btn {
+    width: 100%;
+  }
+
+  .tariffs__card-title {
+    font-size: 1.625rem;
+  }
 }
 
 @media (any-hover: hover) {
@@ -2035,7 +2080,7 @@ body {
     background-color: #000;
   }
 
-  .footer__menu ul a:hover {
+  .footer__menu-link:hover {
     color: #fe4001;
   }
 

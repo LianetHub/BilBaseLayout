@@ -472,18 +472,20 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	// .benefits__visual
 	&__visual {
 		margin-top: 4rem;
-		width: rem(700);
 		flex-shrink: 0;
-		height: rem(700);
+
 		margin-left: auto;
 		margin-right: auto;
 		position: relative;
-		zoom: 0.4;
+		width: rem(280);
+		height: rem(280);
 		@media (min-width: $md5) {
-			zoom: 0.75;
+			width: rem(525);
+			height: rem(525);
 		}
 		@media (min-width: $md4) {
-			zoom: 1;
+			width: rem(700);
+			height: rem(700);
 		}
 	}
 	// .benefits__diagram
@@ -532,10 +534,16 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .benefits__diagram-item
 	&__diagram-item {
-		font-size: rem(72);
 		font-weight: 300;
 		position: absolute;
 		pointer-events: none;
+		font-size: rem(28.8);
+		@media (min-width: $md5) {
+			font-size: rem(54);
+		}
+		@media (min-width: $md4) {
+			font-size: rem(72);
+		}
 		&:nth-child(1) {
 			left: 50%;
 			transform: translateX(-50%);
@@ -581,13 +589,19 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 5rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+		width: 2rem;
+		@media (min-width: $md5) {
+			width: 3.75rem;
+		}
+		@media (min-width: $md4) {
+			width: 5rem;
+		}
 	}
 	// .benefits__diagram-center
 	&__diagram-center {
@@ -597,20 +611,34 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		left: 50%;
 		transform: translate(-50%, -50%);
 		border-radius: 50%;
-		width: rem(400);
-		height: rem(400);
+
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		padding: 2rem 4rem;
+		padding: 0.8rem 1.6rem;
+		width: rem(160);
+		height: rem(160);
+		@media (min-width: $md5) {
+			padding: 1.5rem 3rem;
+			width: rem(300);
+			height: rem(300);
+		}
+		@media (min-width: $md4) {
+			padding: 2rem 4rem;
+			width: rem(400);
+			height: rem(400);
+		}
 	}
 	// .benefits__diagram-text
 	&__diagram-text {
 		display: none;
 		font-weight: 100;
-		font-size: rem(40);
+		font-size: rem(14);
 		@media (min-width: $md5) {
+			font-size: rem(20);
+		}
+		@media (min-width: $md4) {
 			font-size: rem(26);
 		}
 		&.active {
@@ -910,7 +938,12 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .tariffs__btn
 	&__btn {
-		min-width: rem(347);
+		@media (max-width: $md5) {
+			width: 100%;
+		}
+		@media (min-width: $md4) {
+			min-width: rem(347);
+		}
 		&::before {
 			width: rem(19);
 			height: rem(19);
@@ -941,10 +974,13 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		border-radius: rem(4);
 		background-color: #ffffff;
 		border: rem(2) solid #f0f7fe;
-		padding: 2.5rem 2rem 2.5rem 1.25rem;
 		display: flex;
 		flex-direction: column;
 		transition: background-color 0.3s ease;
+		padding: 2rem 1.25rem;
+		@media (min-width: $md4) {
+			padding: 2.5rem 2rem 2.5rem 1.25rem;
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				background-color: #f0f7fe;
@@ -954,6 +990,9 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	// .tariffs__card-title
 	&__card-title {
 		font-size: rem(36);
+		@media (max-width: $md5) {
+			font-size: rem(26);
+		}
 	}
 	// .tariffs__card-desc
 	&__card-desc {
