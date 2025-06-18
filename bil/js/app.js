@@ -129,36 +129,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll('.benefits__tab');
     const allDiagrams = document.querySelectorAll('.benefits__diagram');
 
-    // Функция для управления интерактивностью одной конкретной диаграммы
     const setupDiagramInteractivity = (diagramElement) => {
-        // Если элемента диаграммы нет, выходим
+
         if (!diagramElement) return;
 
         const diagramItems = diagramElement.querySelectorAll('.benefits__diagram-item');
         const diagramTexts = diagramElement.querySelectorAll('.benefits__diagram-text');
         const svgGroups = diagramElement.querySelectorAll('.benefits__diagram-image g');
 
-        // Функция для деактивации всех элементов внутри текущей диаграммы
         const deactivateAll = () => {
             diagramItems.forEach(item => item.classList.remove('active'));
             diagramTexts.forEach(text => {
                 text.classList.remove('active');
-                // Сбрасываем стили для скрытия текста
+
                 text.style.position = 'absolute';
                 text.style.visibility = 'hidden';
             });
             svgGroups.forEach(group => group.classList.remove('active'));
         };
 
-        // Проверяем, есть ли SVG-группы для интерактивности
+
         if (svgGroups.length > 0) {
             svgGroups.forEach((group, index) => {
-                // Важно: Удаляем ранее добавленные обработчики, чтобы избежать дублирования
                 if (group._currentMouseoverHandler) {
                     group.removeEventListener('mouseover', group._currentMouseoverHandler);
                 }
 
-                // Создаем новый обработчик
+
                 const mouseoverHandler = () => {
                     deactivateAll();
                     group.classList.add('active');
@@ -167,20 +164,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                     if (diagramTexts[index]) {
                         diagramTexts[index].classList.add('active');
-                        // Восстанавливаем стили для отображения текста
+
                         diagramTexts[index].style.position = 'static';
                         diagramTexts[index].style.visibility = 'visible';
                     }
                 };
 
-                // Добавляем новый обработчик и сохраняем на него ссылку
                 group.addEventListener('mouseover', mouseoverHandler);
-                group._currentMouseoverHandler = mouseoverHandler; // Сохраняем ссылку на обработчик для последующего удаления
+                group._currentMouseoverHandler = mouseoverHandler;
             });
         }
     };
 
-    // Функция для активации дефолтного элемента на заданной диаграмме
+
     const activateDefaultDiagramItem = (diagramElement) => {
         if (!diagramElement) return;
 
@@ -188,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const diagramTexts = diagramElement.querySelectorAll('.benefits__diagram-text');
         const svgGroups = diagramElement.querySelectorAll('.benefits__diagram-image g');
 
-        // Деактивируем все элементы перед установкой дефолтного
+
         diagramItems.forEach(item => item.classList.remove('active'));
         diagramTexts.forEach(text => {
             text.classList.remove('active');
@@ -197,13 +193,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         svgGroups.forEach(group => group.classList.remove('active'));
 
-        // Активируем третий элемент (индекс 2), если он существует
+
         if (diagramItems[2]) {
             diagramItems[2].classList.add('active');
         }
         if (diagramTexts[2]) {
             diagramTexts[2].classList.add('active');
-            diagramTexts[2].style.position = 'static'; // Показываем текст
+            diagramTexts[2].style.position = 'static';
             diagramTexts[2].style.visibility = 'visible';
         }
         if (svgGroups[2]) {
@@ -211,52 +207,42 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Главная логика при загрузке страницы
-    // Проверяем наличие табов и диаграмм, чтобы избежать ошибок
+
     if (tabs.length > 0 && allDiagrams.length > 0) {
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                // Деактивируем все табы
+
                 tabs.forEach(t => t.classList.remove('active'));
-                // Активируем текущий таб
                 tab.classList.add('active');
 
-                // Деактивируем все блоки диаграмм
+
                 allDiagrams.forEach(diagram => diagram.classList.remove('active'));
 
-                // Находим целевую диаграмму по data-атрибуту (data-diagram-target)
-                const targetDiagramId = tab.dataset.diagramTarget; // Использование data-diagram-target
+                const targetDiagramId = tab.dataset.diagramTarget;
                 const targetDiagram = document.getElementById(targetDiagramId);
 
-                // Если целевая диаграмма найдена, активируем её и настраиваем
                 if (targetDiagram) {
-                    targetDiagram.classList.add('active'); // Делаем диаграмму видимой
-                    setupDiagramInteractivity(targetDiagram); // Настраиваем интерактивность для этой диаграммы
-                    activateDefaultDiagramItem(targetDiagram); // Устанавливаем дефолтный активный элемент
+                    targetDiagram.classList.add('active');
+                    setupDiagramInteractivity(targetDiagram);
+                    activateDefaultDiagramItem(targetDiagram);
                 }
             });
         });
 
-        // Изначальная настройка интерактивности для ВСЕХ диаграмм при загрузке страницы.
-        // Это гарантирует, что mouseover будет работать после переключения, даже если
-        // диаграмма изначально скрыта.
+
         allDiagrams.forEach(diagram => setupDiagramInteractivity(diagram));
 
-        // Устанавливаем начальную активную вкладку и диаграмму при загрузке
-        // Ищем таб, который изначально имеет класс 'active'
+
         const initialActiveTab = document.querySelector('.benefits__tab.active');
         if (initialActiveTab) {
-            // Получаем ID соответствующей диаграммы
             const initialDiagramId = initialActiveTab.dataset.diagramTarget;
             const initialDiagram = document.getElementById(initialDiagramId);
 
             if (initialDiagram) {
-                initialDiagram.classList.add('active'); // Делаем начальную диаграмму видимой
-                activateDefaultDiagramItem(initialDiagram); // Устанавливаем дефолтный элемент для неё
+                initialDiagram.classList.add('active');
+                activateDefaultDiagramItem(initialDiagram);
             }
         } else {
-            // Если ни один таб не имеет 'active' по умолчанию (что не рекомендуется, но возможно)
-            // активируем первый таб и соответствующую диаграмму
             if (tabs[0] && allDiagrams[0]) {
                 tabs[0].classList.add('active');
                 allDiagrams[0].classList.add('active');
@@ -269,21 +255,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
-
-
-
-    // click handlers
-
-    document.addEventListener('click', (e) => {
-
-        const target = e.target;
-
-
-
-    });
 
 
 

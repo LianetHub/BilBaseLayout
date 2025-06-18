@@ -288,7 +288,7 @@
 
 // Стилизация скролла
 
-$scrollbarColor: $text;
+$scrollbarColor: $accent;
 
 ::-webkit-scrollbar {
 	width: rem(8);
@@ -301,7 +301,7 @@ $scrollbarColor: $text;
 	border-radius: rem(8);
 	@media (any-hover: hover) {
 		&:hover {
-			background: darken($color: $text, $amount: 10);
+			background: darken($color: $accent, $amount: 10);
 		}
 	}
 }

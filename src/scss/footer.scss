@@ -1,0 +1,105 @@
+.footer {
+	background-color: #f0f7fe;
+	padding: 3rem 0;
+	// .footer__container
+	&__container {
+	}
+	// .footer__main
+	&__main {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+	// .footer__column
+	&__column {
+	}
+	// .footer__logo
+	&__logo {
+		max-width: 16.2875rem;
+		width: 100%;
+		display: block;
+		& img {
+			width: 100%;
+		}
+	}
+	// .footer__contacts
+	&__contacts {
+		margin-top: 3.5rem;
+	}
+	// .footer__contacts-title
+	&__contacts-title {
+		font-size: rem(13);
+		font-weight: 300;
+		max-width: rem(150);
+	}
+	// .footer__contacts-socials
+	&__contacts-socials {
+		margin-top: 0.875rem;
+		display: flex;
+		gap: 1rem;
+	}
+	// .footer__contacts-social
+	&__contacts-social {
+		width: rem(43);
+		height: rem(43);
+		font-size: 1.25rem;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: rem(1) solid #000;
+		transition: background-color 0.3s ease, color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #fff;
+				background-color: #000;
+			}
+		}
+	}
+	// .footer__menu
+	&__menu {
+		grid-column: span 2;
+		font-size: rem(20);
+		line-height: math.div(26, 20);
+		font-weight: 300;
+		& ul {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.75rem;
+			& a {
+				transition: color 0.3s ease;
+				@media (any-hover: hover) {
+					&:hover {
+						color: $accent;
+					}
+				}
+			}
+		}
+	}
+	// .footer__bottom
+	&__bottom {
+		margin-top: 2rem;
+		padding-top: 1rem;
+		display: flex;
+		justify-content: space-between;
+		border-top: rem(1) solid #d5dfe9;
+		font-size: rem(12);
+		font-weight: 300;
+	}
+	// .footer__copy
+	&__copy {
+		max-width: 47%;
+		line-height: 1.5;
+	}
+	// .footer__privacy
+	&__privacy {
+		line-height: 1;
+		text-decoration: underline;
+		flex-shrink: 0;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
