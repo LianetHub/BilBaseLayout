@@ -1,5 +1,8 @@
 .header {
-	padding: 1.88rem 0;
+	padding: 1rem 0;
+	@media (min-width: $md5) {
+		padding: 1.88rem 0;
+	}
 	// .header__container
 	&__container {
 		display: flex;
@@ -8,11 +11,14 @@
 	}
 	// .header__logo
 	&__logo {
-		max-width: 16.2875rem;
+		max-width: 10rem;
 		width: 100%;
 		display: block;
 		& img {
 			width: 100%;
+		}
+		@media (min-width: $md2) {
+			max-width: 16.2875rem;
 		}
 	}
 	// .header__btns
@@ -22,5 +28,13 @@
 	}
 	// .header__btn
 	&__btn {
+		@media (max-width: $md5) {
+			padding: 1rem;
+			width: 2rem;
+			height: 2rem;
+			& span {
+				display: none;
+			}
+		}
 	}
 }

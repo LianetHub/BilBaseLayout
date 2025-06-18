@@ -56,41 +56,73 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 //=======================================
 
 .promo {
-	padding-bottom: 3rem;
+	padding: 2rem 0;
+	@media (min-width: $md3) {
+		padding: 3rem 0;
+	}
 	// .promo__container
 	&__container {
 	}
 	// .promo__header
 	&__header {
 		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
+		flex-direction: column;
+		row-gap: 2rem;
+		@media (min-width: $md4) {
+			justify-content: space-between;
+			align-items: flex-start;
+			flex-direction: row;
+		}
 	}
 	// .promo__offer
 	&__offer {
 		flex: 1 1 auto;
-		padding-top: 5.4rem;
+		@media (min-width: $md5) {
+			padding-top: 2rem;
+		}
+		@media (min-width: $md1) {
+			padding-top: 5.4rem;
+		}
 	}
 	// .promo__title
 	&__title {
-		margin-right: -8rem;
+		@media (min-width: $md4) {
+			margin-right: -8rem;
+		}
 	}
 	// .promo__desc
 	&__desc {
-		margin-top: 3.7rem;
-		font-size: 1.5rem;
 		font-weight: 100;
+		margin-top: 2rem;
+		@media (min-width: $md2) {
+			margin-top: 3.7rem;
+			font-size: 1.5rem;
+		}
 	}
 	// .promo__btn
 	&__btn {
-		margin-top: 3rem;
-		min-width: rem(347);
+		margin-top: 2rem;
+		@media (min-width: $md2) {
+			margin-top: 3rem;
+			min-width: rem(347);
+		}
 	}
 	// .promo__image
 	&__image {
 		position: relative;
-		flex: 0 0 rem(930);
-		margin-right: -11.3rem;
+
+		@media (min-width: $md3) {
+			flex: 0 0 rem(540);
+			margin-right: -8rem;
+		}
+		@media (min-width: $md2) {
+			flex: 0 0 rem(730);
+			margin-right: -8rem;
+		}
+		@media (min-width: $md1) {
+			margin-right: -11.3rem;
+			flex: 0 0 rem(930);
+		}
 		& img {
 			position: relative;
 			z-index: 2;
@@ -98,21 +130,34 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		&::before {
 			content: "";
 			position: absolute;
-			top: -15px;
-			left: -89px;
-			width: 1210px;
-			height: 919px;
+			top: rem(-15);
+			left: rem(-89);
 			background: url("@img/decor.png") 0 0 / contain no-repeat;
 			z-index: 1;
 			pointer-events: none;
+			width: rem(600);
+			height: rem(450);
+			@media (min-width: $md4) {
+				width: rem(1210);
+				height: rem(920);
+			}
 		}
 	}
 	// .promo__footer
 	&__footer {
-		margin-top: -14rem;
 		background-color: #f0f7fe;
 		border-radius: 1.25rem;
-		padding: 4rem 3.2rem;
+		margin-top: 2rem;
+		padding: 2rem 1rem;
+		@media (min-width: $md4) {
+			padding: 4rem 3.2rem;
+		}
+		@media (min-width: $md2) {
+			margin-top: -6rem;
+		}
+		@media (min-width: $md1) {
+			margin-top: -14rem;
+		}
 	}
 	// .promo__caption
 	&__caption {
@@ -121,9 +166,14 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	// .promo__list
 	&__list {
 		margin-top: 2.7rem;
-		font-size: rem(24);
 		font-weight: 100;
-		columns: 2;
+		@media (min-width: $md4) {
+			columns: 2;
+			font-size: rem(18);
+		}
+		@media (min-width: $md2) {
+			font-size: rem(24);
+		}
 		& li {
 			break-inside: avoid;
 			position: relative;
@@ -146,7 +196,10 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 }
 
 .problem {
-	padding: 3rem 0;
+	padding: 2rem 0;
+	@media (min-width: $md3) {
+		padding: 3rem 0;
+	}
 	// .problem__container
 	&__container {
 		position: relative;
@@ -168,23 +221,36 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .problem__desc
 	&__desc {
-		margin-top: 3.5rem;
 		max-width: rem(620);
+		margin-top: 1.5rem;
+		@media (min-width: $md4) {
+			margin-top: 3.5rem;
+		}
 	}
 	// .problem__images
 	&__images {
-		margin-top: 4.5rem;
-		margin-left: -1.5rem;
-		margin-right: -1.5rem;
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		gap: 2rem;
+		margin-top: 1.5rem;
+		@media (min-width: $md5) {
+			gap: 0;
+			margin-top: 4.5rem;
+			justify-content: space-between;
+			margin-left: -1.5rem;
+			margin-right: -1.5rem;
+			flex-direction: row;
+		}
 	}
 	// .problem__image
 	&__image {
 	}
 	// .problem__bottom
 	&__bottom {
-		margin-top: 4.75rem;
+		margin-top: 2.5rem;
+		@media (min-width: $md4) {
+			margin-top: 4.75rem;
+		}
 	}
 	// .problem__caption
 	&__caption {
@@ -193,7 +259,14 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	&__list {
 		margin-top: 3.25rem;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		row-gap: 4rem;
+		@media (min-width: $md4) {
+			row-gap: 2rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(3, 1fr);
+		}
 	}
 	// .problem__item
 	&__item {
@@ -213,29 +286,44 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		&:not(:last-child) {
 			&::before {
 				position: absolute;
-				left: 100%;
-				top: 2.5rem;
-				font-size: 4rem;
+				top: calc(100% + 0.5rem);
+				left: 0;
 				@extend %ic, .icon-arrow;
+				transform: rotate(90deg);
+				font-size: 3rem;
+				@media (min-width: $md4) {
+					font-size: 4rem;
+					left: 100%;
+					top: 2.5rem;
+					transform: none;
+				}
 			}
 		}
 	}
 	// .problem__item-caption
 	&__item-caption {
 		margin-top: 0.25rem;
-		font-size: rem(24);
+		font-size: rem(18);
+		@media (min-width: $md5) {
+			font-size: rem(24);
+		}
 	}
 	// .problem__item-desc
 	&__item-desc {
 		margin-top: 1rem;
-		font-size: rem(24);
 		font-weight: 100;
 		max-width: rem(240);
+		@media (min-width: $md5) {
+			font-size: rem(24);
+		}
 	}
 }
 
 .solution {
-	padding: 3rem 0;
+	padding: 2rem 0;
+	@media (min-width: $md3) {
+		padding: 3rem 0;
+	}
 	// .solution__container
 	&__container {
 	}
@@ -243,11 +331,12 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	&__body {
 		background-color: #f0f7fe;
 		border-radius: rem(20);
-		padding: 3.25rem 2.65rem 3.75rem;
+
 		display: flex;
 		position: relative;
 		overflow: hidden;
 		z-index: 1;
+		gap: 1rem;
 		&::before {
 			content: "";
 			position: absolute;
@@ -259,26 +348,47 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 			z-index: -1;
 			pointer-events: none;
 		}
+		flex-direction: column;
+		padding: 2rem 1.65rem 2rem;
+		@media (min-width: $md4) {
+			padding: 3.25rem 2.65rem 3.75rem;
+			flex-direction: row;
+		}
 	}
 	// .solution__main
 	&__main {
 	}
 	// .solution__title
 	&__title {
+		@media (max-width: $md5) {
+			font-size: rem(28);
+		}
 	}
 	// .solution__subtitle
 	&__subtitle {
-		margin-top: 4.2rem;
 		max-width: 22.5rem;
 		padding-left: 0.5rem;
+		margin-top: 1rem;
+		@media (min-width: $md4) {
+			margin-top: 2rem;
+		}
+		@media (min-width: $md2) {
+			margin-top: 4.2rem;
+		}
 	}
 	// .solution__text
 	&__text {
-		margin-top: 2.5rem;
-		font-size: rem(24);
 		font-weight: 100;
 		line-height: 1.2;
-		padding-left: 0.5rem;
+		margin-top: 1.5rem;
+		@media (min-width: $md5) {
+			padding-left: 0.5rem;
+			margin-top: 2.5rem;
+			font-size: rem(18);
+		}
+		@media (min-width: $md2) {
+			font-size: rem(24);
+		}
 	}
 	// .solution__image
 	&__image {
@@ -287,58 +397,94 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 }
 
 .benefits {
-	padding: 3rem 0;
+	padding: 2rem 0;
+	@media (min-width: $md3) {
+		padding: 3rem 0;
+	}
 	// .benefits__container
 	&__container {
 		display: flex;
 		align-items: flex-start;
 		justify-content: space-between;
+		flex-direction: column;
+		@media (min-width: $md2) {
+			flex-direction: row;
+		}
 	}
 	// .benefits__main
 	&__main {
-		max-width: rem(510);
+		@media (min-width: $md2) {
+			max-width: rem(510);
+		}
 	}
 	// .benefits__title
 	&__title {
+		text-align: center;
+		@media (min-width: $md2) {
+			text-align: left;
+		}
 	}
 	// .benefits__tabs
 	&__tabs {
-		margin-top: 8rem;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 1.75rem;
 		max-width: rem(450);
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 4rem;
+		@media (min-width: $md2) {
+			margin-top: 8rem;
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
 	// .benefits__tab
 	&__tab {
-		border: rem(1) solid;
-		font-size: 1.5rem;
+		border: em(1, 24) solid;
+
 		color: #000000;
-		border-radius: rem(4);
+		border-radius: em(4, 24);
 		font-weight: 300;
 		text-align: center;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 0.125rem;
+		gap: em(0.125, 1.5);
 		background-color: #ffffff;
 		border: rem(2) solid #f0f7fe;
-		padding: 2rem 0.25rem;
+		padding: em(2, 1.5) em(0.25, 1.5);
 		&::before {
-			font-size: 5.5rem;
+			font-size: em(5.5, 1.5);
 		}
 		&.active {
 			color: #fe4001;
 			border-color: #fe4001;
 		}
+		@media (min-width: $md5) {
+			font-size: 1.25rem;
+		}
+		@media (min-width: $md4) {
+			font-size: 1.5rem;
+		}
 	}
 	// .benefits__visual
 	&__visual {
 		margin-top: 4rem;
-		flex: 0 0 rem(700);
+		width: rem(700);
+		flex-shrink: 0;
 		height: rem(700);
+		margin-left: auto;
+		margin-right: auto;
 		position: relative;
+		zoom: 0.4;
+		@media (min-width: $md5) {
+			zoom: 0.75;
+		}
+		@media (min-width: $md4) {
+			zoom: 1;
+		}
 	}
 	// .benefits__diagram
 	&__diagram {
@@ -374,6 +520,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 			}
 			g {
 				cursor: pointer;
+				-webkit-tap-highlight-color: transparent;
 				&.active {
 					color: #fe4001;
 				}
@@ -461,8 +608,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	// .benefits__diagram-text
 	&__diagram-text {
 		display: none;
-		font-size: rem(26);
 		font-weight: 100;
+		font-size: rem(40);
+		@media (min-width: $md5) {
+			font-size: rem(26);
+		}
 		&.active {
 			display: block;
 		}
@@ -470,7 +620,10 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 }
 
 .effect {
-	padding: 3rem 0;
+	padding: 2rem 0;
+	@media (min-width: $md3) {
+		padding: 3rem 0;
+	}
 	// .effect__container
 	&__container {
 	}
@@ -478,10 +631,13 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	&__body {
 		background-color: #f0f7fe;
 		border-radius: rem(20);
-		padding: 4rem 1rem 3.75rem 3rem;
 		position: relative;
 		background: #f0f7fe;
 		overflow: hidden;
+		padding: 3rem 1rem 2rem;
+		@media (min-width: $md4) {
+			padding: 4rem 1rem 3.75rem 3rem;
+		}
 		&::before {
 			content: "";
 			position: absolute;
@@ -499,15 +655,26 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .effect__subtitle
 	&__subtitle {
-		margin-top: 4rem;
-		font-size: rem(30);
 		font-weight: 100;
+		margin-top: 2rem;
+		font-size: rem(18);
+		@media (min-width: $md4) {
+			font-size: rem(30);
+			margin-top: 4rem;
+		}
 	}
 	// .effect__list
 	&__list {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
 		row-gap: 1.5rem;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		@media (min-width: $md4) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(4, 1fr);
+		}
 	}
 	// .effect__item
 	&__item {
@@ -515,20 +682,31 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .effect__item-num
 	&__item-num {
-		font-size: rem(72);
 		color: #fe4001;
 		font-weight: 500;
+		font-size: rem(32);
+		@media (min-width: $md5) {
+			font-size: rem(48);
+		}
+		@media (min-width: $md4) {
+			font-size: rem(72);
+		}
 	}
 	// .effect__item-desc
 	&__item-desc {
-		font-size: 18px;
 		color: #000000;
 		font-weight: 300;
+		@media (min-width: $md5) {
+			font-size: rem(18);
+		}
 	}
 }
 
 .work {
-	padding: 3rem 0;
+	padding: 2rem 0;
+	@media (min-width: $md3) {
+		padding: 3rem 0;
+	}
 	// .work__container
 	&__container {
 	}
@@ -537,24 +715,35 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .work__subtitle
 	&__subtitle {
-		margin-top: 4.25rem;
-		font-size: rem(31.2);
 		font-weight: 100;
+		font-size: rem(20);
+		margin-top: 2rem;
+		@media (min-width: $md4) {
+			margin-top: 4.25rem;
+			font-size: rem(31.2);
+		}
 	}
 	// .work__list
 	&__list {
 		margin-top: 4rem;
 		display: grid;
-		grid-template-columns: repeat(6, 1fr);
 		row-gap: 2rem;
+		@media (min-width: $md4) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(6, 1fr);
+		}
 	}
 	// .work__item
 	&__item {
 		grid-column: span 2;
-		&:nth-last-child(2) {
-			grid-column: span 3;
-			.work__item-text {
-				max-width: rem(520);
+		@media (min-width: $md2) {
+			&:nth-last-child(2) {
+				grid-column: span 3;
+				.work__item-text {
+					max-width: rem(520);
+				}
 			}
 		}
 	}
@@ -572,7 +761,9 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		margin-top: 1rem;
 		font-size: rem(18);
 		font-weight: 100;
-		max-width: rem(320);
+		@media (min-width: $md4) {
+			max-width: rem(320);
+		}
 		& li {
 			&:not(:last-child) {
 				margin-bottom: 1.15rem;
@@ -581,9 +772,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .work__image
 	&__image {
-		grid-column: span 3;
 		display: flex;
 		justify-content: flex-end;
+		@media (min-width: $md4) {
+			grid-column: span 3;
+		}
 		& img {
 			max-width: 100%;
 		}
@@ -591,7 +784,10 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 }
 
 .portfolio {
-	padding: 3rem 0;
+	padding: 2rem 0;
+	@media (min-width: $md3) {
+		padding: 3rem 0;
+	}
 	// .portfolio__container
 	&__container {
 	}
@@ -599,9 +795,12 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	&__body {
 		background-color: #f0f7fe;
 		border-radius: rem(20);
-		padding: 4rem 3rem 3.75rem 3rem;
 		position: relative;
 		background: #f0f7fe;
+		padding: 2rem;
+		@media (min-width: $md5) {
+			padding: 4rem 3rem 3.75rem 3rem;
+		}
 		&::before {
 			content: "";
 			position: absolute;
@@ -622,8 +821,14 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	&__list {
 		margin-top: 2.5rem;
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: 1rem;
+		gap: 2rem;
+		@media (min-width: $md5) {
+			gap: 1rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(4, 1fr);
+		}
 	}
 	// .portfolio__item
 	&__item {
@@ -663,14 +868,22 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .portfolio__image
 	&__image {
-		margin-left: -26rem;
-		margin-top: -10rem;
-		margin-bottom: -10rem;
+		margin-left: -13rem;
+		margin-top: -5rem;
+		margin-bottom: -5rem;
+		@media (min-width: $md2) {
+			margin-left: -26rem;
+			margin-top: -10rem;
+			margin-bottom: -10rem;
+		}
 	}
 }
 
 .tariffs {
-	padding: 3rem 0;
+	padding: 2rem 0;
+	@media (min-width: $md3) {
+		padding: 3rem 0;
+	}
 	// .tariffs__container
 	&__container {
 	}
@@ -679,10 +892,16 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .tariffs__header
 	&__header {
-		margin-top: 3rem;
+		margin-top: 2rem;
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		flex-direction: column;
+		gap: 2rem;
+		@media (min-width: $md4) {
+			flex-direction: row;
+			margin-top: 3rem;
+			justify-content: space-between;
+			align-items: center;
+		}
 	}
 	// .tariffs__subtitle
 	&__subtitle {
@@ -706,10 +925,16 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .tariffs__cards
 	&__cards {
-		margin-top: 4rem;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
 		gap: 1.5rem;
+		margin-top: 2rem;
+		@media (min-width: $md4) {
+			margin-top: 4rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(3, 1fr);
+		}
 	}
 	// .tariffs__card
 	&__card {
@@ -728,6 +953,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	}
 	// .tariffs__card-title
 	&__card-title {
+		font-size: rem(36);
 	}
 	// .tariffs__card-desc
 	&__card-desc {
@@ -740,8 +966,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	// .tariffs__card-price
 	&__card-price {
 		margin-top: rem(10);
-		font-size: rem(44);
 		font-weight: 100;
+		font-size: rem(28);
+		@media (min-width: $md4) {
+			font-size: rem(44);
+		}
 	}
 	// .tariffs__card-btn
 	&__card-btn {
@@ -751,13 +980,19 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 }
 
 .contacts {
-	padding: 6rem 0 3.5rem;
+	padding: 3rem 0 2.5rem;
+	@media (min-width: $md3) {
+		padding: 6rem 0 3.5rem;
+	}
 	// .contacts__container
 	&__container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		font-size: rem(20);
+		flex-wrap: wrap;
+		@media (min-width: $md5) {
+			font-size: rem(20);
+		}
 	}
 	// .contacts__socials
 	&__socials {

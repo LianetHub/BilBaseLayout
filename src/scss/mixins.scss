@@ -74,7 +74,7 @@
 		//только если меньше контейнера
 		#{$property}: $regularSize;
 		@media (max-width: $md0) {
-			#{$property}: calc(#{$minSizeValue} + #{rem($addSize)} * ((100vw - #{rem($minWidth)}) / #{$maxWidthContainer - rem($minWidth)}));
+			#{$property}: calc(#{$minSizeValue} + #{rem($addSize)} * ((100vw - #{rem($minWidth)}) / #{rem(768) - rem($minWidth)}));
 		}
 	} @else if $type == 2 {
 		//только если больше контейнера
