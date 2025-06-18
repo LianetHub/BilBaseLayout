@@ -7,14 +7,6 @@
 }
 
 @font-face {
-  font-family: "Geologica";
-  font-display: swap;
-  src: url("../fonts/Geologica-Regular.woff2") format("woff2"), url("../fonts/Geologica-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
@@ -35,6 +27,14 @@
   font-display: swap;
   src: url("../fonts/Geologica-Thin.woff2") format("woff2"), url("../fonts/Geologica-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geologica";
+  font-display: swap;
+  src: url("../fonts/Geologica-Regular.woff2") format("woff2"), url("../fonts/Geologica-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -671,7 +671,7 @@ body {
   gap: 1.75rem;
 }
 
-.footer__menu-link {
+.footer__menu ul a {
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
@@ -2035,7 +2035,7 @@ body {
     background-color: #000;
   }
 
-  .footer__menu-link:hover {
+  .footer__menu ul a:hover {
     color: #fe4001;
   }
 
