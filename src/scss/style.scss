@@ -265,13 +265,16 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 	// .problem__list
 	&__list {
 		margin-top: 3.25rem;
-		display: flex;
+
 		row-gap: 4rem;
+		display: grid;
 		@media (min-width: $md4) {
+			grid-template-columns: repeat(2, 1fr);
 			row-gap: 2rem;
-			justify-content: space-between;
 		}
 		@media (min-width: $md2) {
+			display: flex;
+			justify-content: space-between;
 			padding-left: 3rem;
 		}
 	}
@@ -282,8 +285,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		max-width: rem(280);
-		flex: 0 1 33.33%;
+		max-width: rem(260);
+		@media (min-width: $md2) {
+			max-width: rem(280);
+			flex: 0 1 33.33%;
+		}
 		&::after {
 			content: counter(num);
 			color: #fe4001;

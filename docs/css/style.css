@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Geologica";
   font-display: swap;
-  src: url("../fonts/Geologica-Medium.woff2") format("woff2"), url("../fonts/Geologica-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Geologica-Light.woff2") format("woff2"), url("../fonts/Geologica-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Geologica";
   font-display: swap;
-  src: url("../fonts/Geologica-Regular.woff2") format("woff2"), url("../fonts/Geologica-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Geologica-Medium.woff2") format("woff2"), url("../fonts/Geologica-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -25,16 +25,16 @@
 @font-face {
   font-family: "Geologica";
   font-display: swap;
-  src: url("../fonts/Geologica-Light.woff2") format("woff2"), url("../fonts/Geologica-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Geologica-Thin.woff2") format("woff2"), url("../fonts/Geologica-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Geologica";
   font-display: swap;
-  src: url("../fonts/Geologica-Thin.woff2") format("woff2"), url("../fonts/Geologica-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Geologica-Regular.woff2") format("woff2"), url("../fonts/Geologica-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -843,10 +843,9 @@ body {
 
 .problem__list {
   margin-top: 3.25rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   row-gap: 4rem;
+  display: -ms-grid;
+  display: grid;
 }
 
 .problem__item {
@@ -862,10 +861,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  max-width: 17.5rem;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 33.33%;
-          flex: 0 1 33.33%;
+  max-width: 16.25rem;
 }
 
 .problem__item::after {
@@ -1716,10 +1712,9 @@ body {
   }
 
   .problem__list {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 2rem;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
 
   .problem__item:not(:last-child)::before {
@@ -1949,7 +1944,20 @@ body {
   }
 
   .problem__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding-left: 3rem;
+  }
+
+  .problem__item {
+    max-width: 17.5rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 33.33%;
+            flex: 0 1 33.33%;
   }
 
   .solution__subtitle {
